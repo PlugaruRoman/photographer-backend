@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "singularName": "card",
+    "pluralName": "cards",
+    "displayName": "card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "age": {
+      "type": "integer"
+    },
+    "mail": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "introduction": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
