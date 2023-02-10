@@ -4,22 +4,20 @@
   "info": {
     "singularName": "image",
     "pluralName": "images",
-    "displayName": "image"
+    "displayName": "image",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "image": {
+    "photo": {
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": true
     }
   }
 }
