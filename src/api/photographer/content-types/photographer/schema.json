@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "cards",
+  "collectionName": "photographers",
   "info": {
-    "singularName": "card",
-    "pluralName": "cards",
-    "displayName": "card",
-    "description": ""
+    "singularName": "photographer",
+    "pluralName": "photographers",
+    "displayName": "photographer"
   },
   "options": {
     "draftAndPublish": true
@@ -15,42 +14,35 @@
     "about": {
       "type": "richtext"
     },
-    "city": {
-      "type": "string"
-    },
-    "company": {
-      "type": "string"
-    },
-    "facebook": {
-      "type": "string"
-    },
     "firstname": {
-      "type": "string"
-    },
-    "instagram": {
       "type": "string"
     },
     "lastname": {
       "type": "string"
     },
-    "phone": {
+    "company": {
+      "type": "string"
+    },
+    "city": {
       "type": "string"
     },
     "price": {
       "type": "integer"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
     },
     "twitter": {
       "type": "string"
     },
     "web": {
       "type": "string"
-    },
-    "photo": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": true
     }
   }
 }
