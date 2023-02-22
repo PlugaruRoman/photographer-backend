@@ -4,7 +4,8 @@
   "info": {
     "singularName": "photographer",
     "pluralName": "photographers",
-    "displayName": "photographer"
+    "displayName": "photographer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -36,9 +37,6 @@
       "type": "string"
     },
     "instagram": {
-      "type": "string"
-    },
-    "twitter": {
       "type": "string"
     },
     "web": {
