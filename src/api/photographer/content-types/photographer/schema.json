@@ -41,6 +41,15 @@
     },
     "web": {
       "type": "string"
+    },
+    "user": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "email": {
+      "type": "email",
+      "unique": true
     }
   }
 }
