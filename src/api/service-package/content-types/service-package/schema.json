@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_packages",
+  "info": {
+    "singularName": "service-package",
+    "pluralName": "service-packages",
+    "displayName": "Service-package",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "package": {
+      "type": "string"
+    }
+  }
+}
