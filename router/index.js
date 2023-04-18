@@ -6,7 +6,7 @@ const router = new Router();
 
 router.post(
   "/registration",
-  body("email").isEmail(),
+  body("email").isEmail().withMessage("Please include a valid email address"),
   body("password").isLength({ min: 3, max: 32 }),
   userController.registration
 );
