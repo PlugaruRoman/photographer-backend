@@ -1,4 +1,5 @@
 const UserModel = require("../models/user-model");
+const CityModel = require("../models/cities-model");
 const bcrypt = require("bcrypt");
 const uuid = require("uuid");
 const mailService = require("./mail-service");
@@ -7,7 +8,7 @@ const UserDto = require("../dtos/user-dto");
 const ApiError = require("../exceptions/api-error");
 
 class UserService {
-  async registration(email, password) {
+  async registration(username, email, password) {
     const candidate = await UserModel.findOne({ email });
     if (candidate) {
       throw ApiError.BadRequest(`User with email: ${email} already exists `);
@@ -15,6 +16,7 @@ class UserService {
     const hashPassword = await bcrypt.hash(password, 3);
     const activationLink = uuid.v4();
     const user = await UserModel.create({
+      username,
       email,
       password: hashPassword,
       activationLink,
@@ -82,6 +84,10 @@ class UserService {
   async getAllUsers() {
     const users = await UserModel.find();
     return users;
+  }
+  async getAllCities() {
+    const cities = await CityModel.find();
+    return cities;
   }
 }
 

@@ -6,6 +6,7 @@ const router = new Router();
 
 router.post(
   "/registration",
+  body("username").isLength({ min: 3, max: 32 }),
   body("email").isEmail().withMessage("Please include a valid email address"),
   body("password").isLength({ min: 3, max: 32 }),
   userController.registration
@@ -15,5 +16,6 @@ router.post("/logout", userController.logout);
 router.get("/activate/:link", userController.activate);
 router.get("/refresh", userController.refresh);
 router.get("/users", authMiddleware, userController.getUsers);
+router.get("/cities", userController.getCities);
 
 module.exports = router;
