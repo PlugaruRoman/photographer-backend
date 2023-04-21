@@ -48,7 +48,7 @@ class UserService {
     }
     const isPassEqual = await bcrypt.compare(password, user.password);
     if (!isPassEqual) {
-      throw ApiError.BadRequest("Password does not exist");
+      throw ApiError.BadRequest("Password doesn't not exist");
     }
     const userDto = new UserDto(user);
     const tokens = tokenService.generateTokens({ ...userDto });
