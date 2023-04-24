@@ -77,14 +77,6 @@ class UserController {
       next(e);
     }
   }
-  async getCities(req, res, next) {
-    try {
-      const cities = await userService.getAllCities();
-      return res.json(cities);
-    } catch (e) {
-      next(e);
-    }
-  }
 }
 
 module.exports = new UserController();

@@ -1,5 +1,4 @@
 const UserModel = require("../models/user-model");
-const CityModel = require("../models/cities-model");
 const bcrypt = require("bcrypt");
 const uuid = require("uuid");
 const mailService = require("./mail-service");
@@ -84,10 +83,6 @@ class UserService {
   async getAllUsers() {
     const users = await UserModel.find();
     return users;
-  }
-  async getAllCities() {
-    const cities = await CityModel.find();
-    return cities;
   }
 }
 
