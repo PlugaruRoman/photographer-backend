@@ -10,6 +10,7 @@ module.exports = class ProfileDto {
   facebook;
   instagram;
   web;
+  user;
   id;
 
   constructor(model) {
@@ -24,6 +25,7 @@ module.exports = class ProfileDto {
     this.facebook = model.facebook;
     this.instagram = model.instagram;
     this.web = model.web;
+    this.user = model.user;
     this.id = model._id;
   }
 };

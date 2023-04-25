@@ -3,7 +3,6 @@ const { body } = require("express-validator");
 const authMiddleware = require("../middlewares/auth-middleware");
 const userController = require("../controllers/user-controller");
 const cityController = require("../controllers/city-controller");
-const ProfileController = require("../controllers/profile-controller");
 const profileController = require("../controllers/profile-controller");
 const router = new Router();
 
@@ -20,7 +19,11 @@ router.get("/activate/:link", userController.activate);
 router.get("/refresh", userController.refresh);
 router.get("/users", userController.getUsers);
 router.get("/cities", authMiddleware, cityController.getCities);
+
 router.get("/profiles", profileController.getProfiles);
-router.post("/profiles", profileController.createProfiles);
+router.post("/profiles", authMiddleware, profileController.createProfiles);
+router.get("/profiles/:id", profileController.getOneProfile);
+router.put("/profiles", authMiddleware, profileController.updateProfile);
+router.delete("/profiles/:id", authMiddleware, profileController.deleteProfile);
 
 module.exports = router;

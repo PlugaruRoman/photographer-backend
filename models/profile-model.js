@@ -12,6 +12,7 @@ const profileSchema = new Schema({
   facebook: { type: String },
   instagram: { type: String },
   web: { type: String },
+  user: { type: String, unique: true, required: true },
 });
 
 module.exports = model("Profile", profileSchema);
