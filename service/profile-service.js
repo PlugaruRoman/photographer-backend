@@ -10,11 +10,11 @@ class ProfileService {
     const createdProfile = await ProfileModel.create(profile);
     return createdProfile;
   }
-  async getOneProfile(id) {
-    if (!id) {
+  async getOneProfile(user) {
+    if (!user) {
       throw new Error("id undefined");
     }
-    const profile = await ProfileModel.findById(id);
+    const profile = await ProfileModel.findOne({ user });
     return profile;
   }
   async updateProfile(post) {
