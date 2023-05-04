@@ -1,5 +1,4 @@
 const ProfileModel = require("../models/profile-model");
-const ProfileDto = require("../dtos/profile-dto");
 
 class ProfileService {
   async getAllProfiles() {

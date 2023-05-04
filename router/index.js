@@ -4,6 +4,7 @@ const authMiddleware = require("../middlewares/auth-middleware");
 const userController = require("../controllers/user-controller");
 const cityController = require("../controllers/city-controller");
 const profileController = require("../controllers/profile-controller");
+const packageController = require("../controllers/package-controller");
 const router = new Router();
 
 router.post(
@@ -25,5 +26,11 @@ router.post("/profiles", authMiddleware, profileController.createProfiles);
 router.get("/profiles/:id", profileController.getOneProfile);
 router.put("/profiles", authMiddleware, profileController.updateProfile);
 router.delete("/profiles/:id", authMiddleware, profileController.deleteProfile);
+
+router.get("/packages", packageController.getPackages);
+router.post("/packages", authMiddleware, packageController.createPackages);
+router.get("/packages/:id", packageController.getOnePackage);
+router.put("/packages", authMiddleware, packageController.updatePackage);
+router.delete("/packages/:id", authMiddleware, packageController.deletePackage);
 
 module.exports = router;
