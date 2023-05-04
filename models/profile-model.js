@@ -8,6 +8,7 @@ const profileSchema = new Schema({
   city: { type: String },
   company: { type: String },
   price: { type: Number },
+  hour: { type: Number },
   about: { type: String },
   facebook: { type: String },
   instagram: { type: String },

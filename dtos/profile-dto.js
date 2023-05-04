@@ -6,6 +6,7 @@ module.exports = class ProfileDto {
   city;
   company;
   price;
+  hour;
   about;
   facebook;
   instagram;
@@ -21,6 +22,7 @@ module.exports = class ProfileDto {
     this.city = model.city;
     this.company = model.company;
     this.price = model.price;
+    this.hour = model.hour;
     this.about = model.about;
     this.facebook = model.facebook;
     this.instagram = model.instagram;
