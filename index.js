@@ -19,6 +19,7 @@ app.use(
 );
 app.use("/api", router);
 app.use(errorMiddleware);
+app.use("/uploads", express.static("uploads"));
 
 const start = async () => {
   try {
