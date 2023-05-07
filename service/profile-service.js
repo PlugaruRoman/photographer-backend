@@ -13,7 +13,13 @@ class ProfileService {
     if (!user) {
       throw new Error("id undefined");
     }
-    const profile = await ProfileModel.findOne({ user });
+    const profile = await ProfileModel.findOneAndUpdate(
+      { user },
+      { $inc: { viewsCount: 1 } },
+      {
+        returnDocument: "after",
+      }
+    );
     return profile;
   }
   async updateProfile(post) {
