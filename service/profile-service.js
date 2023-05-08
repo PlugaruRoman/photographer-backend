@@ -22,13 +22,17 @@ class ProfileService {
     );
     return profile;
   }
-  async updateProfile(post) {
-    if (!post._id) {
+  async updateProfile(profile) {
+    if (!profile._id) {
       throw new Error("id undefined");
     }
-    const updateProfile = await ProfileModel.findByIdAndUpdate(post._id, post, {
-      new: true,
-    });
+    const updateProfile = await ProfileModel.findByIdAndUpdate(
+      profile._id,
+      profile,
+      {
+        new: true,
+      }
+    );
     return updateProfile;
   }
   async deleteProfile(id) {

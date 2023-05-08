@@ -46,7 +46,7 @@ router.post("/upload", upload.single("avatar"), (req, res) => {
 router.get("/profiles", profileController.getProfiles);
 router.post("/profiles", authMiddleware, profileController.createProfiles);
 router.get("/profiles/:id", profileController.getOneProfile);
-router.put("/profiles", authMiddleware, profileController.updateProfile);
+router.put("/profiles/:id", profileController.updateProfile);
 router.delete("/profiles/:id", authMiddleware, profileController.deleteProfile);
 
 router.get("/packages", packageController.getPackages);
@@ -54,5 +54,7 @@ router.post("/packages", authMiddleware, packageController.createPackages);
 router.get("/packages/:id", packageController.getOnePackage);
 router.put("/packages", authMiddleware, packageController.updatePackage);
 router.delete("/packages/:id", authMiddleware, packageController.deletePackage);
+
+router.get("/example-pack", packageController.getPackagesExample);
 
 module.exports = router;

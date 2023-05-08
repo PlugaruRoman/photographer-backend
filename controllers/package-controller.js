@@ -42,6 +42,14 @@ class PackageController {
       next(e);
     }
   }
+  async getPackagesExample(req, res, next) {
+    try {
+      const packages = await packageService.getPackagesExample();
+      return res.json(packages);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new PackageController();

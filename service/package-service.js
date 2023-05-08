@@ -1,5 +1,6 @@
 const PackageModel = require("../models/package-model");
-
+const ExamplePack = require("../models/example-pack-model");
+const examplePackModel = require("../models/example-pack-model");
 class PackageService {
   async getAllPackages() {
     const profiles = await PackageModel.find();
@@ -31,6 +32,10 @@ class PackageService {
     }
     const packages = await PackageModel.findByIdAndDelete(id);
     return packages;
+  }
+  async getPackagesExample() {
+    const examplePack = await examplePackModel.find();
+    return examplePack;
   }
 }
 
