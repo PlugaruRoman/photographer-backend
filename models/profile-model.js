@@ -19,6 +19,7 @@ const profileSchema = new Schema(
       unique: true,
       required: true,
     },
+    twitter: { type: String },
     viewsCount: { type: Number, default: 0 },
     avatar: { type: String },
   },
