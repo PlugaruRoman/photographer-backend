@@ -35,9 +35,6 @@ router.get("/users", userController.getUsers);
 router.get("/cities", authMiddleware, cityController.getCities);
 
 router.post("/upload", upload.single("avatar"), (req, res) => {
-  // let path = "";
-  // req.files.forEach((file) => (path += file + ""));
-  // path = path.substring(0, path.lastIndexOf(","));
   res.json({
     url: `uploads/${req.file.originalname}`,
   });

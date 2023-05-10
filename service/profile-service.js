@@ -1,9 +1,31 @@
 const ProfileModel = require("../models/profile-model");
 
 class ProfileService {
-  async getAllProfiles() {
-    const profiles = await ProfileModel.find();
-    return profiles;
+  async getAllProfiles(page, limit, search, city, sortBy, cityOptions) {
+    const profiles = await ProfileModel.find({
+      firstname: { $regex: search, $options: "i" },
+    })
+      .where("city")
+      .in([...city])
+      .sort(sortBy)
+      .skip(page * limit)
+      .limit(limit);
+
+    const total = await ProfileModel.countDocuments({
+      city: { $in: [...city] },
+      firstname: { $regex: search, $options: "i" },
+    });
+
+    const response = {
+      error: false,
+      total,
+      page: page + 1,
+      limit,
+      city: cityOptions,
+      profiles,
+    };
+
+    return response;
   }
   async createProfiles(profile) {
     const createdProfile = await ProfileModel.create(profile);
