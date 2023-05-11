@@ -3,7 +3,10 @@ const ProfileModel = require("../models/profile-model");
 class ProfileService {
   async getAllProfiles(page, limit, search, city, sortBy, cityOptions) {
     const profiles = await ProfileModel.find({
-      firstname: { $regex: search, $options: "i" },
+      $or: [
+        { firstname: { $regex: search, $options: "i" } },
+        { lastname: { $regex: search, $options: "i" } },
+      ],
     })
       .where("city")
       .in([...city])
