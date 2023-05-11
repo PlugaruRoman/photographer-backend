@@ -23,7 +23,7 @@ class ProfileController {
       if (sort[1]) {
         sortBy[sort[0]] = sort[1];
       } else {
-        sortBy[sort[0]] = "asc";
+        sortBy[sort[0]] = "desc";
       }
 
       const profiles = await profileService.getAllProfiles(
