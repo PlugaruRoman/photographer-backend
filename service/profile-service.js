@@ -20,7 +20,6 @@ class ProfileService {
     });
 
     const response = {
-      error: false,
       total,
       page: page + 1,
       limit,

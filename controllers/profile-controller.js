@@ -5,7 +5,7 @@ class ProfileController {
   async getProfiles(req, res, next) {
     try {
       const page = parseInt(req.query.page) - 1 || 0;
-      const limit = parseInt(req.query.limit) || 5;
+      const limit = parseInt(req.query.limit) || 10;
       const search = req.query.search || "";
       let sort = req.query.sort || "price";
       let city = req.query.city || "All";
