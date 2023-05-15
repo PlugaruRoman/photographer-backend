@@ -3,7 +3,7 @@ const { body } = require("express-validator");
 const multer = require("multer");
 const authMiddleware = require("../middlewares/auth-middleware");
 const userController = require("../controllers/user-controller");
-const cityController = require("../controllers/city-controller");
+const countryController = require("../controllers/country-controller");
 const profileController = require("../controllers/profile-controller");
 const packageController = require("../controllers/package-controller");
 
@@ -32,7 +32,7 @@ router.post("/logout", userController.logout);
 router.get("/activate/:link", userController.activate);
 router.get("/refresh", userController.refresh);
 router.get("/users", userController.getUsers);
-router.get("/cities", cityController.getCities);
+router.get("/countries", countryController.getCountries);
 
 router.post("/upload", upload.single("avatar"), (req, res) => {
   res.json({

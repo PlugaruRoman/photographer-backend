@@ -1,4 +1,4 @@
-const cityService = require("../service/city-service");
+const countryService = require("../service/country-service");
 const profileService = require("../service/profile-service");
 
 class ProfileController {
@@ -8,14 +8,14 @@ class ProfileController {
       const limit = parseInt(req.query.limit) || 10;
       const search = req.query.search || "";
       let sort = req.query.sort || "price";
-      let city = req.query.city || "All";
+      let country = req.query.country || "All";
 
-      const cityOptions = await cityService.getAllCities();
-      const cityNames = cityOptions.map((city) => city.label);
+      const countryOptions = await countryService.getAllCountries();
+      const countryNames = countryOptions.map((country) => country.label);
 
-      city === "All"
-        ? (city = [...cityNames])
-        : (city = req.query.city.split(","));
+      country === "All"
+        ? (country = [...countryNames])
+        : (country = req.query.country.split(","));
 
       req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
 
@@ -30,9 +30,9 @@ class ProfileController {
         page,
         limit,
         search,
-        city,
+        country,
         sortBy,
-        cityNames
+        countryNames
       );
       return res.json(profiles);
     } catch (e) {
