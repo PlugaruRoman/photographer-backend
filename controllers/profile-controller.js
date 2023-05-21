@@ -16,14 +16,13 @@ class ProfileController {
       country === "All"
         ? (country = [...countryNames])
         : (country = req.query.country.split(","));
-
       req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
 
       let sortBy = {};
       if (sort[1]) {
         sortBy[sort[0]] = sort[1];
       } else {
-        sortBy[sort[0]] = "desc";
+        sortBy[sort[0]] = "asc";
       }
 
       const profiles = await profileService.getAllProfiles(
